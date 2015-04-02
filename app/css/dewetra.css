@@ -1,0 +1,170 @@
+
+.maincontent {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+.header.fix {
+    position: fixed;
+    animation: headfix 300ms linear;
+    -webkit-animation: headfix 300ms linear;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    z-index: 100;
+    border-top: 4px solid #dc513a;
+    font-size: 11px;
+    color: #303030;
+    font-family: "Open Sans",sans-serif;
+}
+
+.header.fix header {
+    background: #dc513a;
+    background: rgba(221,69,43,0.95);
+    height: 40px;
+    margin: -4px auto 0px auto;
+    padding: 8px 10px 0px 10px;
+    -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+    -ms-box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -ms-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.header.fix header a.logoRainews, .header.fix header h1 a {
+    position: relative;
+    width: 78px;
+    height: 30px;
+    background: url(/dl/rainews/images/logo_news_white.png);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+header a.logoRainews, header h1 a {
+    display: block;
+    float: left;
+    width: 166px;
+    height: 64px;
+    padding: 0px 0px 0px 0px;
+}
+
+a {
+    color: #303030;
+    outline: 0px !important;
+    text-decoration: none;
+    -webkit-transition: color 200ms linear;
+    -moz-transition: color 200ms linear;
+    transition: color 200ms linear;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+
+.header.fix header .linkTop {
+    display: block;
+    float: right;
+    position: relative;
+    width: 56px;
+    height: 15px;
+    padding: 15px 0px 0px 0px;
+    margin: 0px 0px 0px 20px;
+    text-align: center;
+    font-size: 9px;
+    color: #a82f1e;
+    text-transform: uppercase;
+}
+
+.header.fix header .search {
+    padding: 0px;
+    margin: 4px 0px 0px 0px;
+    width: 232px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+header .search {
+    display: block;
+    float: right;
+    position: relative;
+    width: 190px;
+    height: 24px;
+    margin: 0px 0px 0px 0px;
+    padding: 20px 0px 20px 0px;
+}
+
+.header.fix header nav {
+    padding: 0px 0px 0px 0px;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+header nav {
+    display: block;
+    float: right;
+    height: 44px;
+    padding: 15px 25px 20px 0px;
+}
+
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+    padding: 0px;
+    margin: 0px;
+}
+menu, ol, ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+dl, menu, ol, ul {
+    margin: 1em 0;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+
+header nav>ul>li {
+    display: block;
+    width: 99px;
+    height: 64px;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    color: #787878;
+}
+
+.header.fix header nav>ul>li span.menuIcon {
+    color: #fff;
+    color: #ecb2a9;
+    font-size: 10px;
+    padding-top: 20px;
+    border-color: #e5715e;
+}
+header nav span.menuIcon {
+    position: relative;
+    display: block;
+    padding-top: 24px;
+    border-right: 1px solid #e4e4e5;
+    font-size: 11px;
+    font-weight: 600;
+}

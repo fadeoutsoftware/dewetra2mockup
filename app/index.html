@@ -1,0 +1,188 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html ng-app="dewetra">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--                                           -->
+    <!-- Dewetra 2 Title                           -->
+    <!--                                           -->
+    <title>Dewetra 2.0</title>
+
+	<!-- Leaf Let Style -->
+	 <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <!-- Google Maps Scripts -->
+    <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+    <!-- Open Layers Scripts -->
+     <script src="bower_components/leaflet/dist/leaflet.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Add custom CSS here -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/dewetra.css" rel="stylesheet">
+
+</head>
+
+<!--                                           -->
+<!-- The body can have arbitrary html, or      -->
+<!-- you can leave the body empty if you want  -->
+<!-- to create a completely dynamic UI.        -->
+<!--                                           -->
+<body ng-controller="TemplateController">
+
+<!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+<noscript>
+    <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+    </div>
+</noscript>
+
+
+<div class="header fix">
+    <header>
+
+        <a class="logoRainews" href="http://www.rainews.it"><img src="/dl/rainews/images/logo_news.png" alt="Tutte le notizie di Rai News Ã¢â‚¬â€œ ultime notizie in tempo reale Ã¢â‚¬â€œ home page, logo rai news"></a>
+
+
+        <a href="#topPage" class="linkTop">Torna su</a>
+        <script>
+            $('.header .linkTop').click(function() {
+                $(window).scrollTop(0);
+                return false;
+            });
+        </script>
+        <div class="search"> <!-- add class .rollover -->
+            <form action="/dl/rainews/ricerca.html" method="get">
+                <!--strong><span>Cerca</span></strong-->
+                <input name="q" type="text"> <button type="submit"><span>Invia</span></button>
+            </form>
+        </div>
+        <script>$('.search form>strong').click(function() {$('.search form').submit();});</script>
+
+
+        <nav>
+            <ul>
+                <li class="menuTematiche">
+                    <span class="menuIcon">Menu</span>
+                    <!--strong>Menu</strong-->
+                    <ul>
+                        <li>
+                            <a href="/dl/rainews/redazioni/ContentSet-b06dfc4b-a8e5-4de8-a879-ffcde6c81ec5-0.html" class="color6">POLITICA</a>
+                        </li><li>
+                        <a href="/dl/rainews/redazioni/ContentSet-37d48870-e750-443f-9139-ff587e10e25c-0.html" class="color12">ECONOMIA</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/spettacolo-91a78978-bc6a-4082-8317-ba2dbbec6df4.html" class="color53">SPETTACOLO</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/tendenze-56439da1-5ff5-45db-a8cc-b8f36492d244.html" class="color43">TENDENZE</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/tech-91941065-ee23-45e0-8323-62b076285204.html" class="color27">TECH</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/cultura-77611eeb-5c4c-4756-912b-1fae5538e95b.html" class="color11">CULTURA</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/sport-fd21eba1-cdc3-44dd-ba4a-2200a1556327.html" class="color33">SPORT</a>
+                    </li><li>
+                        <a href="/dl/rainews/redazioni/ContentSet-aabd1cd1-a618-47e9-a7be-c345b56049bc-0.html" class="color24">ITALIA</a>
+                    </li><li>
+                        <a href="/dl/rainews/redazioni/ContentSet-76865ab6-b5b6-45ad-b3d6-d5ee5d753c06-0.html" class="color35">MONDO</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/people-c4f138f1-5cf2-435f-85f2-908a83f30533.html" class="color43">PEOPLE</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/salute-2457587e-4ae3-4b9e-b703-17b9b9043869.html" class="color2">SALUTE</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/itinerari-0bb79d08-f89d-4dfb-bcfa-2504c6033593.html" class="color55">ITINERARI</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/food-eaa07dde-4ff1-4bb2-b9ca-fa90a1173f6e.html" class="color54">FOOD</a>
+                    </li><li>
+                        <a href="/dl/rainews/redazioni/ContentSet-67255b5c-381c-485a-b622-73716a242558-0.html" class="color3">MOTORI</a>
+                    </li><li>
+                        <a href="/dl/rainews/speciali/scienza-d3337878-2a0b-4451-afdb-91b543a23379.html" class="color31">SCIENZA</a>
+                    </li>
+
+                        <!-- <li class="specialeMondiali"><a class="color22" href="http://www.mondiali.rai.it/fifa2014/rainews/">Fifa 2014</a></li> -->
+                        <li class="bollettinoNeve"><a href="http://www.rainews.it/dl/rainews/bollettino-neve.html">Bollettino Neve</a></li>
+                        <li class="archivioSpeciali"><a href="/dl/rainews/archivioSpeciali.html">tutti gli speciali</a></li>
+                    </ul>
+                </li>
+                <li class="menuVideo"><a href="/dl/rainews/redazioni/ContentSet-751365e1-0e95-45c7-9909-86a63d5d5f84-0.html"><span class="menuIcon">Video</span></a></li>
+                <li class="menuFoto"><a href="/dl/rainews/redazioni/ContentSet-dfa4779f-a45d-474f-a459-71c7bbc77325-0.html"><span class="menuIcon">Foto</span></a></li>
+                <!-- <li class="menuAudio"><a href=""><span class="menuIcon">Audio</span></a></li> -->
+                <li class="menuBlog"><a href="http://www.rainews.it/blog"><span class="menuIcon">Blog</span></a></li>
+            </ul>
+        </nav>
+
+    </header>
+</div>
+    <!-- Map -->
+    <div id = "top" class="container-fluid maincontent" style="padding-left: 0px; padding-right: 0px">
+        <div id="map" ></div>
+    </div>
+    <!-- /Map -->
+
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+    <!-- Bootstrap -->
+    <!--script src="lib/bootstrap/bootstrap.js"></script-->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- jQueryUI -->
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Angular -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-ui/build/angular-ui.js"></script>
+    <!-- Moment js -->
+    <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+
+    <!-- Highchart -->
+    <script src="bower_components/highcharts-release/highcharts.js"></script>
+    <script src="bower_components/highcharts-release/highcharts-more.js"></script>
+    <script src="bower_components/highcharts-release/modules/exporting.js"></script>
+    <!-- Dewetra 2 Services -->
+    <script src="js/services/dialog-service.js"></script>
+    <script src="js/services/ConstantsService.js"></script>
+    <script src="js/services/chartService.js"></script>
+    <!-- Chart Directive -->
+    <script src="js/directives/ChartDirective.js"></script>
+    <!-- Dewetra 2 Controllers -->
+    <script src="js/controllers/TemplateController.js"></script>
+    <script src="js/app.js"></script>
+
+<script>
+    $(resizeMap());
+    $(window).resize(resizeMap);
+
+    function resizeMap(){
+        var mapHeight = Math.max($(document).height(), $(window).height());
+        var mapWidth = $("#top").width();
+
+        if ($("#map").length>0) {
+            $("#top").height(mapHeight);
+            $("#map").height(mapHeight);
+            $("#map").width(mapWidth);
+            console.log( 'RESIZE MAP SET HEIGHT' );
+        }
+        else {
+            $("#top").height("100%");
+            console.log( 'RESIZE MAP SET 100%' );
+        }
+    }
+</script>
+
+</body>
+</html>
