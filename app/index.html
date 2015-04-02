@@ -24,12 +24,20 @@
     <!-- Open Layers Scripts -->
      <script src="bower_components/leaflet/dist/leaflet.js"></script>
 
+    <!-- jquery CSS -->
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
     <!-- Add custom CSS here -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/dewetra.css" rel="stylesheet">
+
+
+    <script src="lib/HorizontalSlideOutMenu/js/modernizr.custom.js"></script>
+    <!--<link rel="stylesheet" href="lib/HorizontalSlideOutMenu/css/default.css"/>-->
+    <link rel="stylesheet" href="lib/HorizontalSlideOutMenu/css/component.css"/>
 
 </head>
 
@@ -50,10 +58,177 @@
 
 
     <!-- Map -->
-    <div id = "top" class="container-fluid maincontent" style="padding-left: 0px; padding-right: 0px">
+    <div id="top" class="container-fluid maincontent" >
+
+        <div class="container">
+            <div class="row">
+
+                <nav class="menu-wrapper " id="menu">
+                    <div class="inner">
+                        <ul class="menu">
+                            <li><a href="#">link A</a></li>
+                            <li><a href="#">link B</a></li>
+                            <li><a href="#">link C</a></li>
+                            <li>
+                                <a href="#">Menu 1</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="#">
+                                            <img   src="lib/HorizontalSlideOutMenu/images/1.png" alt="img01"/>
+                                            <span  >Sub Menu 01</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/2.png" alt="img02"/>
+                                            <span>Sub Menu 02</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/3.png" alt="img03"/>
+                                            <span>Sub Menu 03</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/4.png" alt="img04"/>
+                                            <span>Sub Menu 04</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/5.png" alt="img05"/>
+                                            <span>Sub Menu 05</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/6.png" alt="img06"/>
+                                            <span>Sub Menu 06</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Menu 2</a>
+                                <ul class="submenu sub-rows">
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/7.png" alt="img07"/>
+                                            <span>Sub Menu 01</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/8.png" alt="img08"/>
+                                            <span>Sub Menu 02</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/9.png" alt="img09"/>
+                                            <span>Sub Menu 03</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/10.png" alt="img10"/>
+                                            <span>Sub Menu 04</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/1.png" alt="img01"/>
+                                            <span>Sub Menu 05</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/2.png" alt="img02"/>
+                                            <span>Sub Menu 06</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/3.png" alt="img03"/>
+                                            <span>Sub Menu 07</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/4.png" alt="img04"/>
+                                            <span>Sub Menu 08</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/5.png" alt="img05"/>
+                                            <span>Sub Menu 09</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/6.png" alt="img06"/>
+                                            <span>Sub Menu 10</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/1.png" alt="img01"/>
+                                            <span>Sub Menu 11</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/2.png" alt="img02"/>
+                                            <span>Sub Menu 12</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Menu 3</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/10.png" alt="img10"/>
+                                            <span>Sub Menu 01</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/6.png" alt="img06"/>
+                                            <span>Sub Menu 02</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/9.png" alt="img09"/>
+                                            <span>Sub Menu 03</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <div class="clearfix deco hidden-sm hidden-xs"></div>
         <div id="map" ></div>
+
     </div>
     <!-- /Map -->
+
+    <!--HorizontalSlideOutMenu-->
+    <script src="lib/HorizontalSlideOutMenu/js/cbpHorizontalSlideOutMenu.js"></script>
+    <script>
+        var menu = new cbpHorizontalSlideOutMenu( document.getElementById( 'menu' ) );
+    </script>
 
 
     <!-- jQuery -->
@@ -65,7 +240,6 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- jQueryUI -->
-    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- Angular -->

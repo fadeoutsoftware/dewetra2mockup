@@ -1,0 +1,121 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: #47a3da;
+    font-weight: 400;
+    min-height: 900px;
+}
+
+a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+
+/*colorsert*/
+
+#menu .inner {    background-color: #002053;}
+.menu > li.item-open > a:after { border-top-color:#002053!important; }
+.deco {    border-top: 5px solid #002053;
+    -webkit-border-top: 5px solid #002053;
+    -moz-border-top: 5px solid #002053;
+}
+
+
+
+
+
+/*menu*/
+
+
+
+
+#menu .inner {
+
+    border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 0 0 8px 8px;
+    -moz-border-radius: 0 0 8px 8px;
+    box-shadow:0 0 3px #000;
+    -moz-box-shadow: 0 0 5px #333;
+    webkit-box-shadow: 0 0 5px #333;
+
+}
+#menu .submenu {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    box-shadow:0 3px 5px #555;
+    -moz-box-shadow: 0 3px 5px #333;
+    webkit-box-shadow: 0 3px 5px #333;
+}
+.submenu > li {
+    display: inline-flex;
+    max-width:25%;
+    min-width:15%;
+    width:auto!important;
+}
+.submenu > li a span {
+    min-height: 1em!important;
+    margin-top: 0em!important;
+}
+
+
+.submenu li img {    width:50px;}
+
+.submenu li img,
+.submenu li span {float:left; }
+
+.submenu > li span:nth-child(2) {font-size:1.2em; min-width:50%; max-width:75%;}
+.submenu > li span:nth-child(4) {font-size:0.8em; }
+
+.submenu > li {
+    display: block;
+    outline: none;
+    padding: 2em 1em 1em 1em;
+}
+
+.no-touch .submenu > li a:hover,
+.no-touch .submenu > li a:focus {
+    transform: scale(1.1);
+}
+
+.no-touch .submenu > li a:hover,
+.no-touch .submenu > li a:focus,
+.no-touch .submenu > li a,
+.no-touch .submenu > li a{
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+
+
+/*Mappa*/
+.maincontent {
+    margin: 0 0 0 0;
+    padding:0 0 0 0;
+
+}
+
+
+.deco {
+    position: absolute;
+    z-index:1050;
+    width: 100%;
+
+}
