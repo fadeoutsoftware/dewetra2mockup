@@ -128,7 +128,7 @@
 	width: 16.2%;
 	display: inline-block;
 	vertical-align: top;
-	box-shadow: -28px 0 0 -27px rgba(255,255,255,0.1), 0 -28px 0 -27px rgba(255,255,255,0.1);
+	box-shadow: -28px 0 0 -27px rgba(255,255,255,0.1);
 	opacity: 0;
 	-webkit-transition: opacity 0.1s 0s;
 	-moz-transition: opacity 0.1s 0s;
@@ -142,7 +142,7 @@
 
 /* Every 7th item does not have a left box shadow */
 .submenu > li:nth-child(6n+1) {
-	box-shadow:  0 -28px 0 -27px rgba(255,255,255,0.1);
+	/*box-shadow:  0 -28px 0 -27px rgba(255,255,255,0.1);*/
 }
 
 /* The first one does not have any box shadow */
@@ -155,7 +155,7 @@
 	text-align: center;
 	color: #eee;
 	outline: none;
-	padding: 2em 1em 1em 1em;
+	padding: 1em 1em 1em 1em;
 }
 
 .no-touch .submenu > li a:hover,
