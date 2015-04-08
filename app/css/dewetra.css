@@ -7,7 +7,7 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 
 
-@import "../lib/svg/style.css";
+@import "lib/svg/style.css";
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
@@ -28,14 +28,24 @@ a:hover {
 
 
 
-/*Mappa*/
+/* 
+=====================================================================
+                            Mappa
+=====================================================================
+*/
+
 .maincontent {
     margin: 0 0 0 0;
     padding:0 0 0 0;
 
 }
 
-/*slider*/
+/*
+=====================================================================
+                            slider
+
+=====================================================================
+*/
 
 .ui-rangeSlider-bar {
 
@@ -69,7 +79,13 @@ a:hover {
 
 }
 
-/*logo*/
+/*
+=====================================================================
+                                 logo
+=====================================================================
+*/
+
+
 .logo {
     background: url('../lib/svg/dewetra_20_01.png') center no-repeat;
     background-size: contain;
@@ -81,7 +97,11 @@ a:hover {
     margin: 5px 20px;
 }
 
-/*colorsert*/
+/*
+=====================================================================
+                            colorsert
+=====================================================================
+*/
 
 #menu .inner,
 .icon-search, .search,
@@ -90,6 +110,12 @@ a:hover {
 .ui-rangeSlider-bar
 
 {    background-color: #002053;}
+
+.no-touch .menu > li > a:hover, .no-touch .menu > li > a:focus, .menu > li.item-open > a,
+.icon-search:hover  {
+    color: #fb8c09;
+}
+
 
 .search-input,
 .search-input::-webkit-input-placeholder,
@@ -105,7 +131,11 @@ a:hover {
 }
 
 
-/*search*/
+/*
+=====================================================================
+                             search
+=====================================================================
+*/
 .search.search-open,
 .no-js .search {
     margin-top: 25px;
@@ -113,7 +143,11 @@ a:hover {
     opacity: 0.9;
 }
 
-/*footer*/
+/*
+=====================================================================
+                            footer
+=====================================================================
+*/
 .footer, .deco.footer {
     position: fixed;
     bottom:0;
@@ -134,7 +168,11 @@ a:hover {
 
 
 
-/*menu*/
+/*
+=====================================================================
+                            menu
+=====================================================================
+*/
 
 .menu-wrapper .menu {
     margin: 0 auto 0 200px;
@@ -143,6 +181,14 @@ a:hover {
     margin-right: 5em;
     margin-left: 0;
 
+}
+.menu > li > a {
+    font-size: 1em;
+    line-height:3em;
+}
+.menu > li > a[class*="i-"] {
+    font-size: 2em;
+    line-height:2em;
 }
 
 #menu .inner {
@@ -169,6 +215,7 @@ a:hover {
     min-width:15%;
     width:auto!important;
 }
+
 .submenu > li a span {
     min-height: 1em!important;
     margin-top: 0em!important;
@@ -184,7 +231,6 @@ a:hover {
 .submenu > li span:nth-child(4) {font-size:0.8em; }
 
 .submenu > li {
-    /*display: block;*/
     outline: none;
     padding: 2em 1em 1em 1em;
 }
@@ -207,5 +253,57 @@ a:hover {
 
 
 
+/*
+=====================================================================
+                        Media queries
+=====================================================================
+*/
 
+@media screen and (max-width: 65em){
+    .logo { height:35px; }
+    .icon-search{
+        font-size: 16px;
+        width: 30px;
+        line-height: 30px;
+    }
+    .search-submit { }
+    .search-input {padding:inherit;}
+    .search {min-width:30px; right:4em;}
 
+    .search .search-input {width:0; }
+    .search.search-open .search-input,
+    .no-js .search { width: 100%;}
+
+    .search,
+    .search-input,
+    .icon-search    { height:30px;  }
+    .submenu > li span:nth-child(2) {font-size:1em; max-width:50%;}
+    .submenu > li span:nth-child(4) {font-size:0.5em; }
+}
+@media screen and (max-width: 51.4375em){
+    .menu-wrapper .menu {
+        display: table-cell;
+
+    }
+    .logo {
+        background: url('../lib/svg/dewetra_20_02.png') center no-repeat;
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        margin: 10px 5px;
+    }
+
+    .menu > li:nth-child(n+1) {
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .menu > li:nth-child(1),
+    .menu > li:nth-child(2),
+    .menu > li:nth-child(3) {
+        border-top: none;
+    }
+    .submenu > li {padding:15px 5px; box-shadow: 0 -28px 0 -27px #555!important;}
+    .submenu > li a {        padding:0;    }
+    .submenu > li span:nth-child(2) {max-width:inherit;}
+    .submenu > li a img {display:none;}
+
+}
