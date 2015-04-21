@@ -39,6 +39,12 @@ a:hover {
     padding:0 0 0 0;
 
 }
+.deco {
+    position: absolute;
+    z-index:1050;
+    width: 100%;
+
+}
 
 /*
 =====================================================================
@@ -53,10 +59,6 @@ a:hover {
     box-shadow:none;
     border-radius: 0;
 }
-.ui-rangeSlider .ui-ruler-scale0 .ui-ruler-tick-inner {
-    color: rgba(255,255,255,0.5);
-    border-color:rgba(255,255,255,0.5);
-}
 .ui-editRangeSlider-inputValue,
 .ui-rangeSlider-label {font-size: 1em;}
 .ui-rangeSlider {
@@ -67,17 +69,68 @@ a:hover {
 .ui-rangeSlider-label {bottom: 3.2em;}
 .ui-rangeSlider-label-inner {left: inherit;}
 
-
-
-
-
-
-.deco {
-    position: absolute;
-    z-index:1050;
-    width: 100%;
-
+.ui-rangeSlider-noArrow .ui-rangeSlider-container,
+.ui-rangeSlider-container {    border:none;}
+.ui-rangeSlider-withArrows .ui-rangeSlider-container,
+.ui-rangeSlider-noArrow .ui-rangeSlider-container, .ui-rangeSlider-arrow
+{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
 }
+.ui-rangeSlider-container, .ui-rangeSlider-arrow, .ui-rangeSlider-label {
+    background: none;
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------- */
+/*  jQuery UI Slider */
+/*----------------------------------------------------------------------------------- */
+
+.ui-slider {
+    background-color: #e2e2e2;
+    height: 4px;
+    border-radius: 2px;
+    position: relative; }
+.ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    border-radius: 2px;
+    top: 0;
+    height: 100%; }
+
+.ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    top: -13px;
+    margin-left: -14px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 3px 4px rgba(0, 0, 0, 0.1); }
+
+.ui-widget-header {
+    background-color: #007aff; }
+
+
+/*----------------------------------------------------------------------------------- */
+/*  custom      */
+/*----------------------------------------------------------------------------------- */
+.ui-slider {margin-top: 10px; background: white;}
+.ui-slider .ui-slider-handle {  width: 1.8em;    height: 1.8em;}
+.ui-widget-content {border: none;}
+.ui-slider-horizontal .ui-slider-handle {top: -.8em;}
+
 
 /*
 =====================================================================
@@ -108,13 +161,23 @@ a:hover {
 .search.search-open .icon-search,
 .no-js .search .icon-search,
 .ui-rangeSlider-bar
-
 {    background-color: #002053;}
 
-.no-touch .menu > li > a:hover, .no-touch .menu > li > a:focus, .menu > li.item-open > a,
-.icon-search:hover  {
-    color: #fb8c09;
+.ui-rangeSlider-container
+{ background: #eee;}
+.ui-rangeSlider .ui-ruler-scale0 .ui-ruler-tick-inner
+{
+    color: rgba(0,0,0,0.5);
+    border-color:rgba(0,0,0,0.5);
+    border-left: 1px solid #333;
 }
+
+.no-touch .menu > li > a:hover,
+.no-touch .menu > li > a:focus,
+.menu > li.item-open > a,
+.icon-search:hover,
+.ui-widget-header
+{color: #fb8c09;}
 
 
 .search-input,
@@ -182,6 +245,11 @@ a:hover {
     margin-left: 0;
 
 }
+.menu > li {/* margin-left: 3em; */}
+.menu > li:nth-child(4) {
+    margin-left: 0em;
+}
+
 .menu > li > a {
     font-size: 1em;
     line-height:3em;
@@ -190,6 +258,7 @@ a:hover {
     font-size: 2em;
     line-height:2em;
 }
+
 
 #menu .inner {
 
@@ -276,7 +345,7 @@ a:hover {
 
     .search,
     .search-input,
-    .icon-search    { height:30px;  }
+    .icon-search    { height:30px;  margin-top: 0.4em;}
     .submenu > li span:nth-child(2) {font-size:1em; max-width:50%;}
     .submenu > li span:nth-child(4) {font-size:0.5em; }
 }
@@ -286,24 +355,48 @@ a:hover {
 
     }
     .logo {
-        background: url('../lib/svg/dewetra_20_02.png') center no-repeat;
-        width: 32px;
-        height: 32px;
-        background-size: contain;
-        margin: 10px 5px;
+        background: #002053 url('../lib/svg/dewetra_20_02.png') no-repeat;
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        margin:5px;
+        position:fixed;
+        left:0;
+        border-radius:5px;
+
+
+    }
+    .search { min-width:30px; right:-4em; width:90%;}
+    .search.search-open, .no-js .search {
+        width: 90%;
+        margin-bottom:1em;
     }
 
     .menu > li:nth-child(n+1) {
         border-top: 1px solid rgba(255,255,255,0.1);
+
     }
     .menu > li:nth-child(1),
     .menu > li:nth-child(2),
-    .menu > li:nth-child(3) {
+    .menu > li:nth-child(3){
         border-top: none;
+        display: block;
+        float:left;
+        width: 10%;
+        position: relative;
+        margin-left: 18%;
     }
     .submenu > li {padding:15px 5px; box-shadow: 0 -28px 0 -27px #555!important;}
     .submenu > li a {        padding:0;    }
     .submenu > li span:nth-child(2) {max-width:inherit;}
     .submenu > li a img {display:none;}
 
+    /*     Slider custom */
+    .footer {left:0; right:0;}
+    .footer .inner {padding:8px; padding-bottom:8px;}
+    .ui-slider {margin-top:0;}
+    .ui-slider .ui-slider-handle {  top:-.5em; width: 1.2em;height: 1.2em;}
+
 }
+
+
