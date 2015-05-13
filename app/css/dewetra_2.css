@@ -57,7 +57,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     color: #000;
     text-decoration: none;
 }
@@ -190,6 +190,7 @@ a:hover {
 
 
 
+.slider li a {margin-left:1em;}
 .slider li:not(.not) a {
     padding:10px;
     color: black;
@@ -197,30 +198,34 @@ a:hover {
     border-radius:50%;
     width:2.4em;
     height:2.4em;
-    margin-left:2em;
+    /*     margin-left:2em; */
+    margin-top:1em;
 
 }
+.slider li a {z-index:1;}
+
 
 input[type="range"] {
     -webkit-appearance: none;
-    width: 160px;
+    width: 48%;
     height: 20px;
-    margin: 10px 50px;
+    margin: 5px 90px;
     background: linear-gradient(to right, white 0%, white 100%);
-
-    background-size: 150px 10px;
+    background-size: 100% 10px;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     outline: none;
     /* zoom: 130%; */
     display: block;
-    margin: auto;
-    margin-bottom: 30px;
+    /*     margin: auto; */
+    bottom: 24px;
     position: absolute;
+    /*z-index: 3;*/
 
-    z-index: 9999;
-
+}
+input[type="range"].over {
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -241,7 +246,7 @@ input[type="range"]::-webkit-slider-thumb:after {
     z-index: 1;
     right: 20px;
     top: 5px;
-    background: white;
+    /*     background: white; */
 }
 
 /*
@@ -257,11 +262,12 @@ input[type="range"]::-webkit-slider-thumb:after {
 .search.search-open .icon-search,
 .no-js .search .icon-search,
 .ui-rangeSlider-bar {    background-color: #002053;}
-.color_01 > li.item-open > a:after { border-top-color:#002053!important; }
+
+.color_01 .menu > li.item-open > a:after { border-top-color:#002053!important; }
 .color_02 { background: #49A8A8;}
-.color_02 > li.item-open > a:after { border-top-color:#49A8A8!important; }
+.color_02 .menu > li.item-open > a:after { border-top-color:#49A8A8!important; }
 .color_03 { background: #99BA3C;}
-.color_03 > li.item-open > a:after { border-top-color:#99BA3C!important; }
+.color_03 .menu > li.item-open > a:after { border-top-color:#99BA3C!important; }
 
 .ui-rangeSlider-container
 { background: #eee;}
@@ -354,7 +360,11 @@ input[type="range"]::-webkit-slider-thumb:after {
     padding: 0 0.5em;
 }
 
+#footer [class*="col-"] > .inner [class*="col-"] {
 
+    box-shadow: -10px 0 0 -9px rgba(255,255,255,0.5);
+
+}
 
 /*
 =====================================================================
