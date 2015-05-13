@@ -1,0 +1,204 @@
+/* Main menu wrapper */
+.menu-wrapper {
+	/*position: absolute;*/
+	/*left: 10vw;*/
+	/*right: 10vw;*/
+}
+/* Common style for all lists */
+.menu-wrapper ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+}
+
+/* 100% width bar for menu */
+.inner {
+	background: #47a3da;
+	position: relative;
+	z-index: 100;
+}
+
+/* Main menu style */
+.menu-wrapper .menu {
+	width: 90%;
+	max-width: 69em;
+	margin: 0 auto;
+	padding: 0 1.875em;
+}
+
+.menu > li {
+	margin-left: 4em;
+	display: inline-block;
+}
+
+.menu > li:first-child {
+	margin-left: 0;
+}
+
+/* Main menu link style */
+.menu > li > a {
+	color: #fff;
+	font-size: 1.2em;
+	line-height: 3em;
+	display: inline-block;
+	position: relative;
+	z-index: 10000;
+	outline: none;
+}
+
+.no-touch .menu > li > a:hover,
+.no-touch .menu > li > a:focus,
+.menu > li.item-open > a {
+	color: #02639d;
+}
+
+/* Add an arrow to the main menu link if it has a submenu (not the only child) */
+.menu > li > a:not(:only-child):before {
+	display: inline-block;
+	font-family: 'bpmenu';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	content: "\f107";
+	font-size: 80%;
+	margin-right: 0.3em;
+	opacity: 0.4;
+	vertical-align: middle;
+}
+
+.menu > li.item-open > a:not(:only-child):before {
+	content: "\f106";
+}
+
+/* Add a triangle to currently open menu item link */
+.menu > li.item-open > a:after {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent;
+	border-top-color: #47a3da;
+	border-width: 15px;
+	left: 50%;
+	margin-left: -15px;
+}
+
+/* Submenu style */
+.submenu {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	z-index: 0;
+	text-align: center; /* for aligning the sub items */
+	visibility: hidden;
+	background: rgba(0,0,0,.75);
+
+}
+
+.submenu:before,
+.submenu:after {
+	content: " ";
+	display: table;
+}
+.submenu:after {
+	clear: both;
+}
+
+/* Let's allow 6 item in a row */
+.submenu > li {
+	width: 16.2%;
+	display: inline-block;
+	vertical-align: top;
+	box-shadow: -28px 0 0 -27px rgba(255,255,255,0.1);
+	opacity: 0;
+	-webkit-transition: opacity 0.1s 0s;
+	-moz-transition: opacity 0.1s 0s;
+	transition: opacity 0.1s 0s;
+}
+
+/* First 6 items don't have upper box shadow */
+.submenu > li:nth-child(-n+6) {
+	box-shadow: -28px 0 0 -27px rgba(255,255,255,0.1);
+}
+
+/* Every 7th item does not have a left box shadow */
+.submenu > li:nth-child(6n+1) {
+	/*box-shadow:  0 -28px 0 -27px rgba(255,255,255,0.1);*/
+}
+
+/* The first one does not have any box shadow */
+.submenu > li:first-child {
+	box-shadow: none;
+}
+
+.submenu > li a {
+	display: block;
+	text-align: center;
+	color: #eee;
+	outline: none;
+	padding: 1em 1em 1em 1em;
+}
+
+.no-touch .submenu > li a:hover,
+.no-touch .submenu > li a:focus {
+	color: #888;
+}
+
+.submenu > li a img {
+	border: none;
+	outline: none;
+	display: inline-block;
+	margin: 0;
+	max-width: 100%;
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.no-touch .submenu > li a:hover img {
+	opacity: 0.5;
+}
+
+.submenu > li a span {
+	display: block;
+	min-height: 3em;
+	margin-top: 0.4em;
+}
+
+.menu > li.item-open .submenu {
+	z-index: 1000;
+	visibility: visible;
+}
+
+.menu > li.item-open .submenu > li {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s 0.1s;
+	-moz-transition: opacity 0.5s 0.1s;
+	transition: opacity 0.5s 0.1s;
+}
+
+/* Helper div for animating the background */
+.menubg {
+	background: #f7f7f7;
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	left: 0;
+	z-index: 0;
+	height: 0px;
+}
+
+.no-touch .menubg {
+	-webkit-transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	transition: height 0.3s;
+}
+

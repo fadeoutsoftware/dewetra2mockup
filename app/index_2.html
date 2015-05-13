@@ -1,0 +1,436 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html ng-app="dewetra">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--                                           -->
+    <!-- Dewetra 2 Title                           -->
+    <!--                                           -->
+    <title>Dewetra 2.0</title>
+
+    <!-- Leaf Let Style -->
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <!-- Google Maps Scripts -->
+    <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+    <!-- Open Layers Scripts -->
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+
+    <!-- jquery CSS -->
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Add custom CSS here -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- less -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
+
+    <!--modernizr js-->
+    <script src="lib/HorizontalSlideOutMenu/js/modernizr.custom.js"></script>
+
+    <!-- Horiz Slider Menu css-->
+    <link rel="stylesheet" type="text/css" href="lib/HorizontalSlideOutMenu/css/component_HSM.css"/>
+
+    <!--Expand Search Bar css-->
+    <link rel="stylesheet" type="text/css" href="lib/ExpandingSearchBar/css/component_ESB.css"/>
+
+    <!--google font Helvetica neue equiv-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <!--override-->
+    <link rel="stylesheet" type="text/css" href="lib/svg/style.css" >
+    <link rel="stylesheet" type="text/css" href="css/dewetra_2.css" >
+    <link rel="stylesheet" type="text/css" href="css/mediaq_old.css" >
+    <!--<link rel="stylesheet/less" type="text/css" href="css/mediaq.less" >-->
+
+
+    <!--slider jquery-->
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    <script>
+        $(function() {
+            $( "#slider-range-max" ).slider({
+                range: "max",
+                min: 1,
+                max: 10,
+                value: 2,
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( ui.value );
+                }
+            });
+            $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+        });
+    </script>
+
+    <!--Datepicker from https://github.com/dangrossman/bootstrap-daterangepicker -->
+    <script type="text/javascript" src="lib/bootstrap-daterangepicker-master/moment.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-daterangepicker-master/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-daterangepicker-master/daterangepicker-bs3.css" />
+
+
+
+</head>
+
+<!--                                           -->
+<!-- The body can have arbitrary html, or      -->
+<!-- you can leave the body empty if you want  -->
+<!-- to create a completely dynamic UI.        -->
+<!--                                           -->
+<body ng-controller="TemplateController">
+
+<!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+<noscript>
+    <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+    </div>
+</noscript>
+
+<header>
+    <!-- Map -->
+    <div id="top" class="container-fluid maincontent" >
+
+        <!--<div class="clearfix deco hidden-sm hidden-xs"></div>-->
+        <!--<div class="clearfix deco footer hidden-sm hidden-xs"></div>-->
+
+
+        <nav class="navbar menu-wrapper navbar-fixed-bottom" id="footer" >
+
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 ">
+                        <div class="inner color_02">
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8  ">
+
+                                <ul class="navbar-nav menu slider">
+                                    <li class="not"><a><i class="i-calendar"></i></a></li></li>
+                                    <li><a href="">7g</a></li>
+                                    <li><a href="">3g</a></li>
+                                    <li><a href="">48h</a></li>
+                                    <li><a href="">24h</a></li>
+                                    <li><a href="">12h</a></li>
+                                    <li><a href="">6h</a></li>
+                                    <li><a href="">3h</a></li>
+                                    <li class="not pos"><input type="range" value="20" class="demo"></li>
+                                    <li class="not"><a><i class="i-calendar"></i></a></li></li>
+                                    <!--<li class="not pos" ><div id="slider-range-max"></div></li>-->
+                                </ul>
+
+
+
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <div class="logo text-center">
+                            <a href="http://www.cimafoundation.org" target="_blank">
+                                <img src="rif/logo_cima.svg" alt=""/>
+                            </a>
+                            <a href="http://www.protezionecivile.gov.it/" target="_blank">
+                                <img src="rif/logo_dpc.svg" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div id="search" class="search ">
+                <form >
+                    <input class="search-input" placeholder="Ricerca..." type="text" value="" name="search" id="search">
+                    <input class="search-submit" type="submit" value="">
+                    <span class="icon-search"></span>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="map" style="opacity: 0.7;"></div>
+
+</header>
+<nav class="navbar menu-wrapper navbar-fixed-top " role="navigation" id="menu">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                <div class="inner color_01">
+                    <!--<ul class="menu shortcut">-->
+                    <!--<li><a class="i-mappa_pioggia" href="#" tooltip="Mappa Pioggia"></a></li>-->
+                    <!--<li><a class="i-radar_sri" href="#" tooltip="Radar SRI"></a></li>-->
+                    <!--<li><a class="i-warning_idro" href="#" tooltip="Warning Idro"></a></li>-->
+                    <!--</ul>-->
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="logo" >
+                            <a  class="visible-sm hidden-xs visible-md visible-lg " >
+                                <img src="rif/logo_dewetra_01.svg" alt=""/>
+                                <h2>DEWETRA 2.0</h2>
+                                <br/>
+                                <em>building risk scenarios for world disaster resilience</em>
+                            </a>
+                            <a  class="hidden-lg hidden-md visible-xs hidden-sm " >
+                                <img src="rif/logo_dewetra_01.svg" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <ul class="menu ">
+                            <li>
+                                <a href="#A"><i class="i-osservazioni"></i><p>Osservazioni</p></a>
+                                <ul class="submenu" id="A">
+                                    <li>
+                                        <a href="#">
+                                            <img   src="lib/HorizontalSlideOutMenu/images/1.png" alt="img01"/>
+                                            <span  >Sub Menu 01</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/2.png" alt="img02"/>
+                                            <span>Sub Menu 02</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/3.png" alt="img03"/>
+                                            <span>Sub Menu 03</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="i-previsioni"></i><p>Previsioni</p></a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="#">
+                                            <img   src="lib/HorizontalSlideOutMenu/images/4.png" alt="img01"/>
+                                            <span  >Sub Menu 01</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/5.png" alt="img02"/>
+                                            <span>Sub Menu 02</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/6.png" alt="img03"/>
+                                            <span>Sub Menu 03</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="i-strumenti"></i><p>Strumenti</p></a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="#">
+                                            <img   src="lib/HorizontalSlideOutMenu/images/7.png" alt="img01"/>
+                                            <span  >Sub Menu 01</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/8.png" alt="img02"/>
+                                            <span>Sub Menu 02</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="lib/HorizontalSlideOutMenu/images/9.png" alt="img03"/>
+                                            <span>Sub Menu 03</span>
+                                            <span >blablablabla</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="inner color_02">
+                    <ul class="menu">
+                        <li>
+                            <a href="#"><i class="i-satelite"></i><p>Satellite</p></a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">
+                                        <img   src="lib/HorizontalSlideOutMenu/images/1.png" alt="img01"/>
+                                        <span  >Sub Menu 01</span>
+                                        <span >blablablabla</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="lib/HorizontalSlideOutMenu/images/2.png" alt="img02"/>
+                                        <span>Sub Menu 02</span>
+                                        <span >blablablabla</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="lib/HorizontalSlideOutMenu/images/3.png" alt="img03"/>
+                                        <span>Sub Menu 03</span>
+                                        <span >blablablabla</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="i-radar"></i><p>Radar</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="i-centraline"></i><p>Centraline</p></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="i-terra"></i><p>Terra</p></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <div class="inner color_03">
+                    <ul class="menu">
+                        <li>
+                            <a href="#"><i class="i-incendio"></i><p>Incendio</p></a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#">
+                                        <img   src="lib/HorizontalSlideOutMenu/images/1.png" alt="img01"/>
+                                        <span  >Sub Menu 01</span>
+                                        <span >blablablabla</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="lib/HorizontalSlideOutMenu/images/2.png" alt="img02"/>
+                                        <span>Sub Menu 02</span>
+                                        <span >blablablabla</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="lib/HorizontalSlideOutMenu/images/3.png" alt="img03"/>
+                                        <span>Sub Menu 03</span>
+                                        <span >blablablabla</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="i-alluvioni"></i><p>Alluvione</p></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<section>
+    <footer>
+
+    </footer>
+</section>
+</div>
+
+<section>
+
+</section>
+
+<!-- /Map -->
+
+<!--HorizontalSlideOutMenu-->
+<script src="lib/HorizontalSlideOutMenu/js/cbpHorizontalSlideOutMenu.js"></script>
+<script>
+    var menu = new cbpHorizontalSlideOutMenu( document.getElementById( 'menu' ) );
+</script>
+
+<!--SearchBar-->
+<script src="lib/ExpandingSearchBar/js/classie.js"></script>
+<script src="lib/ExpandingSearchBar/js/uisearch.js"></script>
+<script>
+    new UISearch( document.getElementById( 'search' ) );
+</script>
+
+
+<!-- jQuery -->
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+
+<!-- jQueryUI -->
+<!--<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>-->
+
+<!-- Bootstrap -->
+<!--<script src="lib/bootstrap/bootstrap.js"></script>-->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Angular -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-ui/build/angular-ui.js"></script>
+<!-- Moment js -->
+<script type="text/javascript" src="bower_components/moment/moment.js"></script>
+<!-- Highchart -->
+<script src="bower_components/highcharts-release/highcharts.js"></script>
+<script src="bower_components/highcharts-release/highcharts-more.js"></script>
+<script src="bower_components/highcharts-release/modules/exporting.js"></script>
+<!-- Dewetra 2 Services -->
+<script src="js/services/dialog-service.js"></script>
+<script src="js/services/ConstantsService.js"></script>
+<script src="js/services/chartService.js"></script>
+<!-- Chart Directive -->
+<script src="js/directives/ChartDirective.js"></script>
+<!-- Dewetra 2 Controllers -->
+<script src="js/controllers/TemplateController.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+    $(resizeMap());
+    $(window).resize(resizeMap);
+
+    function resizeMap(){
+        var mapHeight = Math.max($(document).height(), $(window).height());
+        var mapWidth = $("#top").width();
+
+        if ($("#map").length>0) {
+            $("#top").height(mapHeight);
+            $("#map").height(mapHeight);
+            $("#map").width(mapWidth);
+            console.log( 'RESIZE MAP SET HEIGHT' );
+        }
+        else {
+            $("#top").height("100%");
+            console.log( 'RESIZE MAP SET 100%' );
+        }
+    }
+</script>
+
+</body>
+</html>

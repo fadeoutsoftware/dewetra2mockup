@@ -1,0 +1,159 @@
+@media (min-width: 768px) and (max-width: 1199px) {
+  .icon-search {
+    font-size: 1em;
+    width: 30px;
+    line-height: 30px;
+  }
+  .search-input {
+    padding: inherit;
+  }
+  .search {
+    min-width: 30px;
+    right: 4em;
+  }
+  .search .search-input {
+    width: 0;
+  }
+  .search.search-open .search-input,
+  .no-js .search {
+    width: 100%;
+  }
+  .search,
+  .search-input,
+  .icon-search {
+    height: 30px;
+  }
+  .submenu > li span:nth-child(2) {
+    font-size: 1em;
+    max-width: 50%;
+  }
+  .submenu > li span:nth-child(4) {
+    font-size: 0.5em;
+  }
+}
+@media (max-width: 767px) {
+  .logo {
+    text-transform: lowercase;
+    font-size: 0.25em;
+  }
+  .search {
+    min-width: 30px;
+    right: -4em;
+    width: 90%;
+  }
+  .search.search-open,
+  .no-js .search {
+    width: 90%;
+    margin-bottom: 1em;
+  }
+  .menu-wrapper {
+    font-size: 1em;
+  }
+  .menu-wrapper .menu {
+    display: table-cell;
+    padding: 0;
+    max-width: none;
+    width: 100%;
+  }
+  .menu > li {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+  .menu > li:first-child {
+    border-top: none;
+  }
+  .menu > li > a {
+    display: block;
+  }
+  .menu > li > a:not(:only-child):before {
+    line-height: 1.8;
+    right: 0;
+    position: absolute;
+    font-size: 2em;
+  }
+  .menubg {
+    display: none;
+  }
+  .menu > li.item-open .submenu {
+    height: auto;
+  }
+  .menu > li:nth-child(n+1) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .menu > li:nth-child(1),
+  .menu > li:nth-child(2),
+  .menu > li:nth-child(3) {
+    border-top: none;
+    display: block;
+    float: left;
+    /* width: 10%; */
+    position: relative;
+    /* margin-left: 18%; */
+  }
+  .submenu {
+    background: #222;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+  }
+  /* Let's only allow 3 item in a row now */
+  /*.submenu > li {    width: 30%;  }*/
+  .submenu > li {
+    width: 100%;
+    display: block;
+  }
+  /* Reset box shadows for the 6 items in row case */
+  .submenu > li:nth-child(-n+6),
+  .submenu > li:nth-child(6n+1) {
+    box-shadow: -28px 0 0 -27px #555555, 0 -28px 0 -27px #555555;
+  }
+  /* First 4 items don't have upper box shadow */
+  .submenu > li:nth-child(-n+3) {
+    box-shadow: -28px 0 0 -27px #555555;
+  }
+  /* Every 5th item does not have a left box shadow */
+  .submenu > li:nth-child(3n+1) {
+    box-shadow: 0 -28px 0 -27px #555555;
+  }
+  /* Let's only allow 1 item in a row now */
+  .menu-wrapper .submenu > li {
+    box-shadow: 0 1px #cecece;
+    text-align: left;
+  }
+  .submenu > li a {
+    text-align: left;
+    line-height: 50px;
+    padding: 0;
+  }
+  .submenu > li a img {
+    float: left;
+    max-height: 50px;
+    display: none;
+  }
+  .submenu > li a span {
+    min-height: 0;
+    margin: 0;
+  }
+  .submenu > li span:nth-child(2) {
+    max-width: inherit;
+  }
+  /*     Slider custom */
+  .footer {
+    left: 0;
+    right: 0;
+  }
+  .footer .inner {
+    padding: 8px;
+    padding-bottom: 8px;
+  }
+  .ui-slider {
+    margin-top: 0;
+  }
+  .ui-slider .ui-slider-handle {
+    top: -0.5em;
+    width: 1.2em;
+    height: 1.2em;
+  }
+}

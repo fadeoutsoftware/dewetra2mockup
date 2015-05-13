@@ -1,15 +1,16 @@
 @font-face {
 	font-family: 'dewetra';
-	src:url('../../lib/svg/fonts/dewetra.eot?-57rhpn');
-	src:url('../../lib/svg/fonts/dewetra.eot?#iefix-57rhpn') format('embedded-opentype'),
-		url('../../lib/svg/fonts/dewetra.woff?-57rhpn') format('woff'),
-		url('../../lib/svg/fonts/dewetra.ttf?-57rhpn') format('truetype'),
-		url('../../lib/svg/fonts/dewetra.svg?-57rhpn#dewetra') format('svg');
+	src:url('../../lib/svg/fonts/dewetra.eot?fmzyoc');
+	src:url('../../lib/svg/fonts/dewetra.eot?#iefixfmzyoc') format('embedded-opentype'),
+		url('../../lib/svg/fonts/dewetra.woff?fmzyoc') format('woff'),
+		url('../../lib/svg/fonts/dewetra.ttf?fmzyoc') format('truetype'),
+		url('../../lib/svg/fonts/dewetra.svg?fmzyoc#dewetra') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-[class^="i-"], [class*=" i-"] {
+[class^="i-"], [class*=" i-"],
+.menu > li > a:not(:only-child):before   {
 	font-family: 'dewetra';
 	speak: none;
 	font-style: normal;
@@ -23,15 +24,51 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.i-radar_sri:before {
+.i-centraline:before {
 	content: "\e800";
 }
 
-.i-warning_idro:before {
+.i-calendar:before {
 	content: "\e801";
 }
 
-.i-mappa_pioggia:before {
+.i-osservazioni:before {
 	content: "\e802";
+}
+
+.i-incendio:before {
+	content: "\e803";
+}
+
+.i-alluvioni:before {
+	content: "\e804";
+}
+
+.i-previsioni:before {
+	content: "\e805";
+}
+
+.i-radar:before {
+	content: "\e806";
+}
+
+.i-satelite:before {
+	content: "\e807";
+}
+
+.i-strumenti:before {
+	content: "\e808";
+}
+
+.i-radar_sri:before {
+	content: "\e809";
+}
+
+.i-warning_idro:before {
+	content: "\e80a";
+}
+
+.i-mappa_pioggia:before {
+	content: "\e80b";
 }
 
